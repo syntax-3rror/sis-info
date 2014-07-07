@@ -1,0 +1,32 @@
+<table id="mitabla">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Para llevar</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comandas.each do |comanda| %>
+      <tr>
+        <td><%= comanda.nombre %></td>
+        <td><%= comanda.cantidad %></td>
+        <td><%= comanda.llevar %></td>
+        <td><%= button_to 'Listo', edit_path(comanda) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<script type="text/javascript">
+	$(document).ready(
+  		function(){
+    		setInterval(function(){
+      		$('#mitabla').load('/chef/index');
+    	}, 8000);
+  	});
+</script>

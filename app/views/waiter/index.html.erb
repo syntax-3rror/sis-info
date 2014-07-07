@@ -1,0 +1,42 @@
+<table id="mitabla">
+  <thead>
+    <tr>
+      <th>Mesa</th>
+      <th>Estado</th>
+      <th>Servicio </th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mesas.each do |mesa| %>
+      	<tr>
+            <td><%= mesa.id %></td>
+            <% @comanda = ComandaComida.where(mesa_id: mesa.id) %>         		
+            
+            <td>
+            <% @comanda.each do |c| %>
+                <%= c.nombre  %>
+                <%= c.estado  %>
+            <% end %>  
+            <td>
+            <td><%= link_to 'pedir comida', :action => 'tomar_comanda_comida', :id => mesa.id %><td>
+      		  
+            <% if (mesa.id % 4) == 0 %>
+		           <br> 
+		        <% end %>	
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+<script type="text/javascript">
+  $(document).ready(
+      function(){
+        setInterval(function(){
+          $('#mitabla').load('/waiter/index');
+      }, 8000);
+    });
+</script>

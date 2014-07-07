@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fogondemaria</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+  <ul class="nav navbar-nav navbar-right">        
+            <% if user_signed_in? %>
+             
+              
+
+              <li class="">
+                <%= link_to current_user.email, destroy_user_session_path, :method => :delete %>
+                                 
+              </li>
+            <% else %>
+              <li><a href="/users/sign_in">Sign in</a></li>
+              <li><a href="/users/sign_up">Sign up</a></li> 
+            <% end %>
+          </ul>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

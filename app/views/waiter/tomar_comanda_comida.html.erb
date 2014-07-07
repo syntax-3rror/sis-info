@@ -1,0 +1,29 @@
+  <form action="http://localhost:3000/waiter/insertar_comanda_comida" method='post'>
+    <label for="pique">Pique.................        </label>
+    <input type="checkbox" name="pique" id="pique" checked="checked">  
+    <label for="cantidad">Cantidad</label>
+    <input type="number" name="cantidad_pique" id="cantidad"> 
+    <label for="llevar">Para llevar</label>
+    <select id="llevar" name="llevar_pique">
+      <option value="si">si</option>    
+      <option value="no">no</option>  
+    </select>  
+    <input type="hidden" name="estado_pique" value="en proceso"> 
+    <input type="hidden" name="mesa_id_pique" value="<%= @mesa.id %>"><br>
+
+    <label for="picante">Picante de lengua</label>
+    <input type="checkbox" name="picante" id="picante" checked="checked">  
+    <label for="cantidad">Cantidad</label>
+    <input type="number" name="cantidad_picante" id="cantidad"> 
+    <label for="llevar">Para llevar</label>
+    <select id="llevar" name="llevar_picante">
+      <option value="si">si</option>    
+      <option value="no">no</option>  
+    </select>  
+    <input type="hidden" name="estado_picante" value="en proceso"> 
+    <input type="hidden" name="mesa_id_picante" value="<%= @mesa.id %>"><br>
+    
+    <input type="submit">
+  </form>
+
+
