@@ -24,7 +24,7 @@ protected
 	elsif current_user.cargo == 'chef'
   	"/chef/index"
 	elsif current_user.cargo == 'bartender'
-	"/bartender/index"
+	'/bartender/index'
 	elsif current_user.role == 'admin'
 	 '/administrator/index'
 

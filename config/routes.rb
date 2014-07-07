@@ -14,10 +14,11 @@ Fogondemaria::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+   get '/bartender/index'
    root 'homes#index'
    get '/homes/index'
    get '/chef/index'
-   get '/bartender/index'
+  
    get '/administrators/index' 
    get '/users/sign_up' => 'devise/sessions#new'
 

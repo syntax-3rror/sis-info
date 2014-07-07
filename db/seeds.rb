@@ -16,7 +16,6 @@ admin.save!
 
 #usuarios
 usuario1 = User.new #user_id = 2
-usuario1.username = 'usuario1'
 usuario1.role = 'mesero'
 usuario1.cargo = 'mesero'
 usuario1.email = 'usuario1@hotmail.com'
